@@ -22,11 +22,10 @@ public class Application {
 
 
         List<StudentBursier> bursieri = new ArrayList<>();
-        bursieri.add(new StudentBursier(1025, "Andrei", "Popa", "ISM141/2", 8.70, 725.50));
-        bursieri.add(new StudentBursier(1024, "Ioan", "Mihalcea", "ISM141/1", 9.80, 801.10));
-        bursieri.add(new StudentBursier(1026, "Anamaria", "Prodan", "TI131/1", 8.90, 745.50));
-        bursieri.add(new StudentBursier(1029, "Bianca", "Popescu", "TI131/1", 9.10, 780.80));
-
+        bursieri.add(new StudentBursier(1025, "Andrei", "Popa", "ISM141/2", 8.70f, 725.50));
+        bursieri.add(new StudentBursier(1024, "Ioan", "Mihalcea", "ISM141/1", 9.80f, 801.10));
+        bursieri.add(new StudentBursier(1026, "Anamaria", "Prodan", "TI131/1", 8.90f, 745.50));
+        bursieri.add(new StudentBursier(1029, "Bianca", "Popescu", "TI131/1", 9.10f, 780.80));
 
         System.out.println("\n Lista de studenti bursieri :");
         for (StudentBursier sb : bursieri) {
@@ -36,10 +35,8 @@ public class Application {
 
         salveazaInFisier("bursieri_out.txt", bursieri);
 
-        System.out.println("\n Merge.");
+        System.out.println("\n Salvare executata cu succes în bursieri_out.txt!");
     }
-
-
 
     public static void salveazaInFisier(String numeFisier, Collection<? extends Student> colectie) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(numeFisier))) {
@@ -50,7 +47,7 @@ public class Application {
                 writer.println(s.toString());
             }
         } catch (IOException e) {
-            System.err.println("Nu merge : " + e.getMessage());
+            System.err.println("Eroare la scriere: " + e.getMessage());
         }
     }
 

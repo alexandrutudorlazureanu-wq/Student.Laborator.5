@@ -7,17 +7,15 @@ public class StudentBursier extends Student {
     private double cuantumBursa;
 
 
-    public StudentBursier(int numarMatricol, String prenume, String nume, String formatieDeStudiu, double nota, double cuantumBursa) {
+    public StudentBursier(int numarMatricol, String prenume, String nume, String formatieDeStudiu, float nota, double cuantumBursa) {
         super(numarMatricol, prenume, nume, formatieDeStudiu);
-        this.setNota((float) nota);
+        this.setNota(nota);
         this.cuantumBursa = cuantumBursa;
     }
 
     public double getCuantumBursa() {
         return cuantumBursa;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -35,9 +33,6 @@ public class StudentBursier extends Student {
 
     @Override
     public String toString() {
-
         return super.toString() + String.format(" Bursa: %-10.2f", cuantumBursa);
     }
-
-
 }
